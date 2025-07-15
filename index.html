@@ -18,8 +18,9 @@
             background: linear-gradient(-45deg, #ff6b9d, #c44569, #f8b500, #ff3838);
             background-size: 400% 400%;
             animation: gradientShift 8s ease infinite;
-            min-height: 100vh;
+            height: 100vh;
             overflow-x: hidden;
+            overflow-y: auto;
         }
         
         @keyframes gradientShift {
@@ -72,6 +73,7 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+            min-height: calc(100vh - 100px); /* Adjust for header/footer */
         }
         
         /* Auto Slideshow */
@@ -164,12 +166,12 @@
         .photo-frame:nth-child(7) { animation-delay: 1.4s; }
         .photo-frame:nth-child(8) { animation-delay: 1.6s; }
         .photo-frame:nth-child(9) { animation-delay: 1.8s; }
-        .photo-frame:nth-child(10) { animation-delay: 2.0s; }
+        /* .photo-frame:nth-child(10) { animation-delay: 2.0s; }
         .photo-frame:nth-child(11) { animation-delay: 2.2s; }
         .photo-frame:nth-child(12) { animation-delay: 2.4s; }
         .photo-frame:nth-child(13) { animation-delay: 2.6s; }
         .photo-frame:nth-child(14) { animation-delay: 2.8s; }
-        .photo-frame:nth-child(15) { animation-delay: 3.0s; }
+        .photo-frame:nth-child(15) { animation-delay: 3.0s; } */
         
         /* Auto Polaroid Effect */
         .auto-polaroid {
@@ -937,7 +939,6 @@
         .footer {
             background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(255, 107, 157, 0.2));
             backdrop-filter: blur(20px);
-            margin-top: 100px;
             padding: 60px 0 20px 0;
             position: relative;
             overflow: hidden;
@@ -1207,13 +1208,6 @@
                 <img src="1 (2).jpg" alt="Những khoảnh khắc hạnh phúc" class="photo-img auto-filter-warm">
             </div>
             
-            <!-- Neon Glow -->
-            <!-- <div class="photo-frame auto-neon-glow">
-                <img src="1 (2).jpg" alt="Khiêu vũ cùng nhau" class="photo-img auto-filter-dreamy">
-            </div> -->
-            
-
-            
             <!-- Glitch Effect -->
             <div class="photo-frame auto-glitch">
                 <img src="1 (2).jpg" alt="Nụ hôn hoàng hôn" class="photo-img auto-filter-vintage">
@@ -1224,11 +1218,7 @@
                 <img src="1 (2).jpg" alt="Tình yêu mãi mãi" class="photo-img auto-filter-warm">
             </div>
             
-            <!-- Magic Glow -->
-            <!-- <div class="photo-frame magic-glow">
-                <img src="1 (2).jpg" alt="Nắm tay nhau" class="photo-img auto-filter-dreamy">
-            </div> -->
-                        <!-- 3D Rotate -->
+            <!-- 3D Rotate -->
             <div class="photo-frame auto-3d-rotate">
                 <img src="1 (2).jpg" alt="Dạo biển" class="photo-img auto-filter-cool">
             </div>
@@ -1237,11 +1227,6 @@
             <div class="photo-frame butterfly-effect">
                 <img src="1 (2).jpg" alt="Cười cùng nhau" class="photo-img auto-filter-warm">
             </div>
-            
-            <!-- Rainbow Border -->
-            <!-- <div class="photo-frame rainbow-border">
-                <img src="1 (2).jpg" alt="Picnic lãng mạn" class="photo-img auto-filter-vintage">
-            </div> -->
             
             <!-- Liquid Effect -->
             <div class="photo-frame liquid-effect">
@@ -1257,21 +1242,6 @@
             <div class="photo-frame fire-hearts">
                 <img src="1 (2).jpg" alt="Ôm nhau" class="photo-img auto-filter-warm">
             </div>
-            
-            <!-- Galaxy Swirl -->
-            <!-- <div class="photo-frame galaxy-swirl">
-                <img src="1 (2).jpg" alt="Khiêu vũ" class="photo-img auto-filter-vintage">
-            </div> -->
-            
-            <!-- Love Explosion -->
-            <!-- <div class="photo-frame love-explosion">
-                <img src="1 (2).jpg" alt="Cùng nấu ăn" class="photo-img auto-filter-cool">
-            </div> -->
-            
-            <!-- Dream Bubble -->
-            <!-- <div class="photo-frame dream-bubble">
-                <img src="1 (2).jpg" alt="Chụp ảnh cùng nhau" class="photo-img auto-filter-dreamy">
-            </div> -->
         </section>
         
         <!-- Quote Section -->
@@ -1301,7 +1271,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; Nguyễn Minh Đức. Forever & Always 💖</p>
+                <p>© Nguyễn Minh Đức. Forever & Always 💖</p>
             </div>
         </footer>
     </div>
