@@ -1,1208 +1,1150 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tìm Đường Vào Tim Em 💖</title>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Con Thuyền Tình Trôi Về Tim Em 🌅</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        body {
-            font-family: 'Quicksand', sans-serif;
-            background: linear-gradient(135deg, #ffeef8 0%, #ffe0f0 25%, #ffb3d9 50%, #ff99cc 75%, #ff80bf 100%);
-            background-size: 400% 400%;
-            animation: gradientFlow 8s ease infinite;
-            min-height: 100vh;
-            overflow-x: hidden;
-            position: relative;
-        }
+      body {
+        font-family: "Quicksand", sans-serif;
+        background: linear-gradient(
+          135deg,
+          #ffeef8 0%,
+          #ffe0f0 25%,
+          #ffb3d9 50%,
+          #ff99cc 75%,
+          #ff80bf 100%
+        );
+        background-size: 400% 400%;
+        animation: gradientFlow 8s ease infinite;
+        min-height: 100vh;
+        overflow-x: hidden;
+        position: relative;
+      }
 
-        @keyframes gradientFlow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+      @keyframes gradientFlow {
+        0% {
+          background-position: 0% 50%;
         }
-
-        /* Falling hearts animation */
-        .heart-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1;
+        50% {
+          background-position: 100% 50%;
         }
-
-        .falling-heart {
-            position: absolute;
-            color: rgba(255, 105, 180, 0.8);
-            font-size: 20px;
-            animation: fall linear infinite;
-            pointer-events: none;
+        100% {
+          background-position: 0% 50%;
         }
+      }
 
-        @keyframes fall {
-            0% {
-                transform: translateY(-100px) rotate(0deg);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(100vh) rotate(360deg);
-                opacity: 0;
-            }
+      .heart-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .falling-heart {
+        position: absolute;
+        color: rgba(255, 105, 180, 0.8);
+        font-size: 20px;
+        animation: fall linear infinite;
+        pointer-events: none;
+      }
+
+      @keyframes fall {
+        0% {
+          transform: translateY(-100px) rotate(0deg);
+          opacity: 1;
         }
-
-        /* Main container */
-        .game-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            padding: 20px;
-            position: relative;
-            z-index: 10;
+        100% {
+          transform: translateY(100vh) rotate(360deg);
+          opacity: 0;
         }
+      }
 
-        /* Welcome screen */
-        .welcome-screen {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            animation: fadeInUp 1s ease-out;
+      .game-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 20px;
+        position: relative;
+        z-index: 10;
+      }
+
+      .welcome-screen {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        animation: fadeInUp 1s ease-out;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
         }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        to {
+          opacity: 1;
+          transform: translateY(0);
         }
+      }
 
+      .main-title {
+        font-size: 3.5rem;
+        font-weight: 700;
+        background: linear-gradient(45deg, #ff1744, #ff4569, #ff6b9d);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 1rem;
+        text-shadow: 0 4px 8px rgba(255, 23, 68, 0.3);
+        animation: titlePulse 2s ease-in-out infinite;
+      }
+
+      @keyframes titlePulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+      }
+
+      .subtitle {
+        font-size: 1.3rem;
+        color: #d81b60;
+        margin-bottom: 2rem;
+        font-weight: 500;
+        animation: subtitleFloat 3s ease-in-out infinite;
+      }
+
+      @keyframes subtitleFloat {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-5px);
+        }
+      }
+
+      .heart-decoration {
+        font-size: 2rem;
+        margin: 1rem 0;
+        animation: heartBeat 1.5s ease-in-out infinite;
+      }
+
+      @keyframes heartBeat {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.2);
+        }
+      }
+
+      .user-info-form {
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(20px);
+        border-radius: 25px;
+        padding: 30px;
+        margin-bottom: 20px;
+        box-shadow: 0 20px 40px rgba(255, 105, 180, 0.2);
+        border: 2px solid rgba(255, 182, 193, 0.3);
+        max-width: 400px;
+        width: 100%;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+        text-align: left;
+      }
+
+      .form-label {
+        display: block;
+        font-size: 1rem;
+        font-weight: 600;
+        color: #2d3436;
+        margin-bottom: 8px;
+      }
+
+      .form-input {
+        width: 100%;
+        padding: 12px 15px;
+        border: 2px solid rgba(255, 182, 193, 0.4);
+        border-radius: 15px;
+        font-size: 1rem;
+        font-family: "Quicksand", sans-serif;
+        background: rgba(255, 240, 245, 0.8);
+        transition: all 0.3s ease;
+      }
+
+      .form-input:focus {
+        outline: none;
+        border-color: #ff69b4;
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
+      }
+
+      .btn {
+        background: linear-gradient(45deg, #ff4081, #ff6ec7);
+        color: white;
+        border: none;
+        padding: 15px 40px;
+        font-size: 1.2rem;
+        font-weight: 600;
+        border-radius: 50px;
+        cursor: pointer;
+        box-shadow: 0 8px 25px rgba(255, 64, 129, 0.4);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        font-family: "Quicksand", sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.3),
+          transparent
+        );
+        transition: left 0.5s;
+      }
+
+      .btn:hover::before {
+        left: 100%;
+      }
+
+      .btn:hover {
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 12px 35px rgba(255, 64, 129, 0.6);
+      }
+
+      .btn:active {
+        transform: translateY(-1px) scale(1.02);
+      }
+
+      .btn:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        transform: none;
+      }
+
+      .game-screen {
+        display: none;
+        text-align: center;
+        max-width: 600px;
+        width: 100%;
+        animation: slideIn 0.6s ease-out;
+      }
+
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateX(50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      .question-card {
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(20px);
+        border-radius: 25px;
+        padding: 40px;
+        margin-bottom: 30px;
+        box-shadow: 0 20px 40px rgba(255, 105, 180, 0.2);
+        border: 2px solid rgba(255, 182, 193, 0.3);
+      }
+
+      .question-number {
+        background: linear-gradient(45deg, #ff4081, #ff6ec7);
+        color: white;
+        padding: 8px 20px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        display: inline-block;
+        margin-bottom: 20px;
+      }
+
+      .question-text {
+        font-size: 1.5rem;
+        color: #2d3436;
+        margin-bottom: 30px;
+        font-weight: 600;
+        line-height: 1.4;
+      }
+
+      .options-container {
+        display: grid;
+        gap: 15px;
+        margin-bottom: 20px;
+      }
+
+      .option-btn {
+        background: rgba(255, 240, 245, 0.8);
+        color: #2d3436;
+        border: 2px solid rgba(255, 182, 193, 0.4);
+        padding: 18px 25px;
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 1.1rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        font-family: "Quicksand", sans-serif;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .option-btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 105, 180, 0.1),
+          transparent
+        );
+        transition: left 0.5s;
+      }
+
+      .option-btn:hover::before {
+        left: 100%;
+      }
+
+      .option-btn:hover {
+        background: rgba(255, 105, 180, 0.1);
+        border-color: #ff69b4;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(255, 105, 180, 0.3);
+      }
+
+      .response-message {
+        display: none;
+        background: linear-gradient(45deg, #ff9a9e, #fecfef);
+        color: #2d3436;
+        padding: 20px;
+        border-radius: 20px;
+        margin: 20px 0;
+        font-size: 1.2rem;
+        font-weight: 600;
+        animation: messageSlideIn 0.5s ease-out;
+        box-shadow: 0 10px 25px rgba(255, 154, 158, 0.3);
+      }
+
+      @keyframes messageSlideIn {
+        from {
+          opacity: 0;
+          transform: scale(0.8);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      .final-screen {
+        display: none;
+        text-align: center;
+        animation: finalFadeIn 1s ease-out;
+      }
+
+      @keyframes finalFadeIn {
+        from {
+          opacity: 0;
+          transform: scale(0.8);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      .heart-unlock {
+        font-size: 8rem;
+        color: #ff1744;
+        margin: 30px 0;
+        animation: heartUnlock 2s ease-in-out;
+      }
+
+      @keyframes heartUnlock {
+        0% {
+          transform: scale(0) rotate(-180deg);
+          opacity: 0;
+        }
+        50% {
+          transform: scale(1.2) rotate(0deg);
+          opacity: 1;
+        }
+        100% {
+          transform: scale(1) rotate(0deg);
+          opacity: 1;
+        }
+      }
+
+      .final-message {
+        background: linear-gradient(45deg, #ffd700, #ffed4e);
+        padding: 30px;
+        border-radius: 25px;
+        margin: 30px 0;
+        box-shadow: 0 15px 35px rgba(255, 215, 0, 0.3);
+        border: 3px solid rgba(255, 215, 0, 0.5);
+      }
+
+      .final-title {
+        font-size: 2.2rem;
+        color: #2d3436;
+        margin-bottom: 15px;
+        font-weight: 700;
+      }
+
+      .final-text {
+        font-size: 1.3rem;
+        color: #2d3436;
+        font-weight: 600;
+        line-height: 1.5;
+      }
+
+      .result-summary {
+        background: rgba(255, 255, 255, 0.9);
+        padding: 20px;
+        border-radius: 20px;
+        margin: 20px 0;
+        text-align: left;
+        font-size: 1rem;
+        color: #2d3436;
+      }
+
+      .celebration-hearts {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 9999;
+      }
+
+      .celebration-heart {
+        position: absolute;
+        font-size: 30px;
+        color: #ff1744;
+        animation: celebrate 3s ease-out forwards;
+      }
+
+      @keyframes celebrate {
+        0% {
+          transform: scale(0) rotate(0deg);
+          opacity: 1;
+        }
+        50% {
+          transform: scale(1.5) rotate(180deg);
+          opacity: 1;
+        }
+        100% {
+          transform: scale(1) rotate(360deg) translateY(-200px);
+          opacity: 0;
+        }
+      }
+
+      .progress-container {
+        width: 100%;
+        height: 6px;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 10px;
+        margin-bottom: 30px;
+        overflow: hidden;
+      }
+
+      .progress-bar {
+        height: 100%;
+        background: linear-gradient(45deg, #ff4081, #ff6ec7);
+        border-radius: 10px;
+        transition: width 0.5s ease;
+        width: 0%;
+      }
+
+      .loading-indicator {
+        display: none;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .loading-spinner {
+        width: 40px;
+        height: 40px;
+        border: 4px solid rgba(255, 105, 180, 0.3);
+        border-top: 4px solid #ff69b4;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin: 0 auto 15px;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .loading-text {
+        color: #d81b60;
+        font-weight: 600;
+        font-size: 1.1rem;
+      }
+
+      .status-message {
+        padding: 15px;
+        border-radius: 15px;
+        margin: 15px 0;
+        font-weight: 600;
+        text-align: center;
+      }
+
+      .status-success {
+        background: linear-gradient(45deg, #4caf50, #81c784);
+        color: white;
+      }
+
+      .status-error {
+        background: linear-gradient(45deg, #f44336, #ef5350);
+        color: white;
+      }
+
+      @media (max-width: 768px) {
         .main-title {
-            font-size: 3.5rem;
-            font-weight: 700;
-            background: linear-gradient(45deg, #ff1744, #ff4569, #ff6b9d);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 1rem;
-            text-shadow: 0 4px 8px rgba(255, 23, 68, 0.3);
-            animation: titlePulse 2s ease-in-out infinite;
-        }
-
-        @keyframes titlePulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+          font-size: 2.5rem;
         }
 
         .subtitle {
-            font-size: 1.3rem;
-            color: #d81b60;
-            margin-bottom: 2rem;
-            font-weight: 500;
-            animation: subtitleFloat 3s ease-in-out infinite;
+          font-size: 1.1rem;
         }
 
-        @keyframes subtitleFloat {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-        }
-
-        .heart-decoration {
-            font-size: 2rem;
-            margin: 1rem 0;
-            animation: heartBeat 1.5s ease-in-out infinite;
-        }
-
-        @keyframes heartBeat {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.2); }
-        }
-
-        /* User info form */
-        .user-info-form {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(20px);
-            border-radius: 25px;
-            padding: 30px;
-            margin-bottom: 20px;
-            box-shadow: 0 20px 40px rgba(255, 105, 180, 0.2);
-            border: 2px solid rgba(255, 182, 193, 0.3);
-            max-width: 400px;
-            width: 100%;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-            text-align: left;
-        }
-
-        .form-label {
-            display: block;
-            font-size: 1rem;
-            font-weight: 600;
-            color: #2d3436;
-            margin-bottom: 8px;
-        }
-
-        .form-input {
-            width: 100%;
-            padding: 12px 15px;
-            border: 2px solid rgba(255, 182, 193, 0.4);
-            border-radius: 15px;
-            font-size: 1rem;
-            font-family: 'Quicksand', sans-serif;
-            background: rgba(255, 240, 245, 0.8);
-            transition: all 0.3s ease;
-        }
-
-        .form-input:focus {
-            outline: none;
-            border-color: #ff69b4;
-            background: rgba(255, 255, 255, 0.9);
-            box-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
-        }
-
-        /* Buttons */
         .btn {
-            background: linear-gradient(45deg, #ff4081, #ff6ec7);
-            color: white;
-            border: none;
-            padding: 15px 40px;
-            font-size: 1.2rem;
-            font-weight: 600;
-            border-radius: 50px;
-            cursor: pointer;
-            box-shadow: 0 8px 25px rgba(255, 64, 129, 0.4);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            font-family: 'Quicksand', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            position: relative;
-            overflow: hidden;
+          padding: 12px 30px;
+          font-size: 1rem;
         }
 
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.5s;
-        }
-
-        .btn:hover::before {
-            left: 100%;
-        }
-
-        .btn:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 12px 35px rgba(255, 64, 129, 0.6);
-        }
-
-        .btn:active {
-            transform: translateY(-1px) scale(1.02);
-        }
-
-        .btn:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        /* Game screen */
-        .game-screen {
-            display: none;
-            text-align: center;
-            max-width: 600px;
-            width: 100%;
-            animation: slideIn 0.6s ease-out;
-        }
-
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        .question-card {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(20px);
-            border-radius: 25px;
-            padding: 40px;
-            margin-bottom: 30px;
-            box-shadow: 0 20px 40px rgba(255, 105, 180, 0.2);
-            border: 2px solid rgba(255, 182, 193, 0.3);
-        }
-
-        .question-number {
-            background: linear-gradient(45deg, #ff4081, #ff6ec7);
-            color: white;
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            display: inline-block;
-            margin-bottom: 20px;
+        .question-card,
+        .user-info-form {
+          padding: 25px;
         }
 
         .question-text {
-            font-size: 1.5rem;
-            color: #2d3436;
-            margin-bottom: 30px;
-            font-weight: 600;
-            line-height: 1.4;
-        }
-
-        .options-container {
-            display: grid;
-            gap: 15px;
-            margin-bottom: 20px;
+          font-size: 1.3rem;
         }
 
         .option-btn {
-            background: rgba(255, 240, 245, 0.8);
-            color: #2d3436;
-            border: 2px solid rgba(255, 182, 193, 0.4);
-            padding: 18px 25px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 1.1rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            font-family: 'Quicksand', sans-serif;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .option-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 105, 180, 0.1), transparent);
-            transition: left 0.5s;
-        }
-
-        .option-btn:hover::before {
-            left: 100%;
-        }
-
-        .option-btn:hover {
-            background: rgba(255, 105, 180, 0.1);
-            border-color: #ff69b4;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(255, 105, 180, 0.3);
-        }
-
-        /* Response message */
-        .response-message {
-            display: none;
-            background: linear-gradient(45deg, #ff9a9e, #fecfef);
-            color: #2d3436;
-            padding: 20px;
-            border-radius: 20px;
-            margin: 20px 0;
-            font-size: 1.2rem;
-            font-weight: 600;
-            animation: messageSlideIn 0.5s ease-out;
-            box-shadow: 0 10px 25px rgba(255, 154, 158, 0.3);
-        }
-
-        @keyframes messageSlideIn {
-            from {
-                opacity: 0;
-                transform: scale(0.8);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        /* Final screen */
-        .final-screen {
-            display: none;
-            text-align: center;
-            animation: finalFadeIn 1s ease-out;
-        }
-
-        @keyframes finalFadeIn {
-            from {
-                opacity: 0;
-                transform: scale(0.8);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
+          padding: 15px 20px;
+          font-size: 1rem;
         }
 
         .heart-unlock {
-            font-size: 8rem;
-            color: #ff1744;
-            margin: 30px 0;
-            animation: heartUnlock 2s ease-in-out;
-        }
-
-        @keyframes heartUnlock {
-            0% {
-                transform: scale(0) rotate(-180deg);
-                opacity: 0;
-            }
-            50% {
-                transform: scale(1.2) rotate(0deg);
-                opacity: 1;
-            }
-            100% {
-                transform: scale(1) rotate(0deg);
-                opacity: 1;
-            }
-        }
-
-        .final-message {
-            background: linear-gradient(45deg, #ffd700, #ffed4e);
-            padding: 30px;
-            border-radius: 25px;
-            margin: 30px 0;
-            box-shadow: 0 15px 35px rgba(255, 215, 0, 0.3);
-            border: 3px solid rgba(255, 215, 0, 0.5);
+          font-size: 6rem;
         }
 
         .final-title {
-            font-size: 2.2rem;
-            color: #2d3436;
-            margin-bottom: 15px;
-            font-weight: 700;
+          font-size: 1.8rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .main-title {
+          font-size: 2rem;
         }
 
-        .final-text {
-            font-size: 1.3rem;
-            color: #2d3436;
-            font-weight: 600;
-            line-height: 1.5;
+        .game-container {
+          padding: 15px;
         }
 
-        .result-summary {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 20px;
-            border-radius: 20px;
-            margin: 20px 0;
-            text-align: left;
-            font-size: 1rem;
-            color: #2d3436;
+        .question-card,
+        .user-info-form {
+          padding: 20px;
         }
 
-        .celebration-hearts {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 9999;
+        .heart-unlock {
+          font-size: 5rem;
         }
+      }
 
-        .celebration-heart {
-            position: absolute;
-            font-size: 30px;
-            color: #ff1744;
-            animation: celebrate 3s ease-out forwards;
-        }
-
-        @keyframes celebrate {
-            0% {
-                transform: scale(0) rotate(0deg);
-                opacity: 1;
-            }
-            50% {
-                transform: scale(1.5) rotate(180deg);
-                opacity: 1;
-            }
-            100% {
-                transform: scale(1) rotate(360deg) translateY(-200px);
-                opacity: 0;
-            }
-        }
-
-        /* Progress bar */
-        .progress-container {
-            width: 100%;
-            height: 6px;
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 10px;
-            margin-bottom: 30px;
-            overflow: hidden;
-        }
-
-        .progress-bar {
-            height: 100%;
-            background: linear-gradient(45deg, #ff4081, #ff6ec7);
-            border-radius: 10px;
-            transition: width 0.5s ease;
-            width: 0%;
-        }
-
-        /* Loading indicator */
-        .loading-indicator {
-            display: none;
-            text-align: center;
-            padding: 20px;
-        }
-
-        .loading-spinner {
-            width: 40px;
-            height: 40px;
-            border: 4px solid rgba(255, 105, 180, 0.3);
-            border-top: 4px solid #ff69b4;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 15px;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .loading-text {
-            color: #d81b60;
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-
-        /* Status messages */
-        .status-message {
-            padding: 15px;
-            border-radius: 15px;
-            margin: 15px 0;
-            font-weight: 600;
-            text-align: center;
-        }
-
-        .status-success {
-            background: linear-gradient(45deg, #4caf50, #81c784);
-            color: white;
-        }
-
-        .status-error {
-            background: linear-gradient(45deg, #f44336, #ef5350);
-            color: white;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .main-title {
-                font-size: 2.5rem;
-            }
-            
-            .subtitle {
-                font-size: 1.1rem;
-            }
-            
-            .btn {
-                padding: 12px 30px;
-                font-size: 1rem;
-            }
-            
-            .question-card, .user-info-form {
-                padding: 25px;
-            }
-            
-            .question-text {
-                font-size: 1.3rem;
-            }
-            
-            .option-btn {
-                padding: 15px 20px;
-                font-size: 1rem;
-            }
-            
-            .heart-unlock {
-                font-size: 6rem;
-            }
-            
-            .final-title {
-                font-size: 1.8rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .main-title {
-                font-size: 2rem;
-            }
-            
-            .game-container {
-                padding: 15px;
-            }
-            
-            .question-card, .user-info-form {
-                padding: 20px;
-            }
-            
-            .heart-unlock {
-                font-size: 5rem;
-            }
-        }
-
-        /* Hidden class */
-        .hidden {
-            display: none !important;
-        }
+      .hidden {
+        display: none !important;
+      }
     </style>
-</head>
-<body>
-    <!-- Falling hearts container -->
+  </head>
+  <body>
     <div class="heart-container" id="heartContainer"></div>
 
     <div class="game-container">
-        <!-- Welcome Screen -->
-        <div class="welcome-screen" id="welcomeScreen">
-            <h1 class="main-title">Tìm Đường Vào Tim Em</h1>
-            <div class="heart-decoration">💖✨💕</div>
-            <p class="subtitle">Hành trình khám phá trái tim đang chờ bạn...</p>
-            
-            <!-- User Info Form -->
-            <div class="user-info-form">
-                <div class="form-group">
-                    <label class="form-label" for="playerName">Tên của bạn 💕</label>
-                    <input type="text" id="playerName" class="form-input" placeholder="Nhập tên của bạn..." required>
-                </div>
-                <div class="form-group">
-                    <label class="form-label" for="playerEmail">Email 📧</label>
-                    <input type="email" id="playerEmail" class="form-input" placeholder="email@example.com" required>
-                </div>
-                <div class="form-group">
-                    <label class="form-label" for="playerAge">Tuổi 🎂</label>
-                    <input type="number" id="playerAge" class="form-input" placeholder="Nhập tuổi..." min="13" max="100">
-                </div>
-            </div>
-            
-            <button class="btn" onclick="startGame()" id="startBtn">🚀 Bắt Đầu Ngay</button>
-            
-            <!-- Status messages -->
-            <div id="statusMessage"></div>
+      <div class="welcome-screen" id="welcomeScreen">
+        <h1 class="main-title">Thuyền Cập Bến – Lòng Dịu Êm</h1>
+        <div class="heart-decoration">🌸💖😋</div>
+        <p class="subtitle">
+          Khám phá bản thân mình qua 5 câu hỏi thú vị nè! 🌟
+        </p>
+
+        <div class="user-info-form">
+          <div class="form-group">
+            <label class="form-label" for="playerName"
+              >Tên của bạn 🌸</label
+            >
+            <input
+              type="text"
+              id="playerName"
+              class="form-input"
+              placeholder="Nhập tên bạn nha..."
+              value=""
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="playerEmail">Email của bạn 📬</label>
+            <input
+              type="email"
+              id="playerEmail"
+              class="form-input"
+              placeholder="email@example.com"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="playerAge">Tuổi của bạn 🌟</label>
+            <input
+              type="number"
+              id="playerAge"
+              class="form-input"
+              placeholder="Nhập tuổi nha..."
+              min="18"
+              max="100"
+              value="19"
+            />
+          </div>
         </div>
 
-        <!-- Game Screen -->
-        <div class="game-screen" id="gameScreen">
-            <div class="progress-container">
-                <div class="progress-bar" id="progressBar"></div>
-            </div>
-            
-            <div class="question-card">
-                <div class="question-number" id="questionNumber"></div>
-                <h2 class="question-text" id="questionText"></h2>
-                <div class="options-container" id="optionsContainer"></div>
-                <div class="response-message" id="responseMessage"></div>
-            </div>
+        <button class="btn" onclick="startGame()" id="startBtn">
+          🌸 Bắt Đầu Khám Phá
+        </button>
+
+        <div id="statusMessage"></div>
+      </div>
+
+      <div class="game-screen" id="gameScreen">
+        <div class="progress-container">
+          <div class="progress-bar" id="progressBar"></div>
         </div>
 
-        <!-- Final Screen -->
-        <div class="final-screen" id="finalScreen">
-            <div class="loading-indicator" id="finalLoadingIndicator">
-                <div class="loading-spinner"></div>
-                <div class="loading-text">Đang lưu kết quả cuối cùng... 💕</div>
-            </div>
-            
-            <div id="finalContent" style="display: none;">
-                <div class="heart-unlock">💖</div>
-                <div class="final-message">
-                    <h2 class="final-title">Chúc Mừng! 🎉</h2>
-                    <p class="final-text" id="finalResultText">Bạn đã tìm được đường vào tim em rồi! 💕<br>
-                    Trái tim em đã mở ra và chào đón bạn với tất cả tình yêu thương! ✨</p>
-                </div>
-                
-                <div class="result-summary" id="resultSummary"></div>
-                
-                <button class="btn" onclick="restartGame()">💫 Chơi Lại</button>
-                <button class="btn" onclick="shareResult()" style="margin-left: 10px;">📱 Chia Sẻ</button>
-            </div>
+        <div class="question-card">
+          <div class="question-number" id="questionNumber"></div>
+          <h2 class="question-text" id="questionText"></h2>
+          <div class="options-container" id="optionsContainer"></div>
+          <div class="response-message" id="responseMessage"></div>
         </div>
+      </div>
+
+      <div class="final-screen" id="finalScreen">
+        <div class="loading-indicator" id="finalLoadingIndicator">
+          <div class="loading-spinner"></div>
+          <div class="loading-text">Đang phân lọc thông tin của bạn... 💕</div>
+        </div>
+
+        <div id="finalContent" style="display: none">
+          <div class="heart-unlock">✨</div>
+          <div class="final-message">
+            <h2 class="final-title">Kết Quả Của Bạn! 🎉</h2>
+            <p class="final-text" id="finalResultText">
+              Wow, bạn thực sự đặc biệt! Hãy xem bạn thuộc nhóm tính cách nào nha! 💕
+            </p>
+          </div>
+
+          <div class="result-summary" id="resultSummary"></div>
+
+          <button class="btn" onclick="restartGame()">
+            🔄 Làm Lại Nào
+          </button>
+        </div>
+      </div>
     </div>
 
     <script>
-        // ===== GOOGLE SHEETS CONFIGURATION =====
-        // Thay thế URL này bằng URL Google Apps Script của bạn
-        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxhZluU9t4p8MqsAeUc3q20CtQ0XaUq4R5Pxvg7h0Xi3ZUbhVeyjL8Tp2plh_7ti5NzqQ/exec';
-        
-        // ===== GAME DATA =====
-        const questions = [
-            {
-                question: "Bạn thích kiểu hẹn hò nào nhất? 💕",
-                options: [
-                    "🌅 Ngắm hoàng hôn trên bãi biển",
-                    "🍽️ Ăn tối lãng mạn dưới ánh nến",
-                    "🎬 Xem phim và ăn bỏng ngô",
-                    "🌸 Dạo bộ trong công viên hoa"
-                ],
-                responses: [
-                    "Trái tim em rung lên với vẻ đẹp thiên nhiên! 🌊",
-                    "Em cảm nhận được sự lãng mạn từ bạn! 🕯️",
-                    "Bạn thật đáng yêu và gần gũi! 🍿",
-                    "Sự nhẹ nhàng của bạn làm em tan chảy! 🌺"
-                ]
-            },
-            {
-                question: "Món quà nào khiến bạn rung động nhất? 🎁",
-                options: [
-                    "💌 Lá thư tình viết tay",
-                    "🌹 Bó hoa hồng đỏ thắm",
-                    "🧸 Gấu bông siêu dễ thương",
-                    "💍 Trang sức lấp lánh"
-                ],
-                responses: [
-                    "Những lời ngọt ngào chạm đến tim em! 💝",
-                    "Bạn thật cổ điển và lãng mạn! 🌹",
-                    "Sự dễ thương của bạn làm em mê mẩn! 🧸",
-                    "Bạn biết cách làm em tỏa sáng! ✨"
-                ]
-            },
-            {
-                question: "Bạn sẽ làm gì khi thấy crush buồn? 😢",
-                options: [
-                    "🤗 Ôm thật chặt và an ủi",
-                    "🎵 Hát một bài hát vui vẻ",
-                    "🍰 Mua bánh ngọt yêu thích",
-                    "👂 Lắng nghe và chia sẻ"
-                ],
-                responses: [
-                    "Vòng tay ấm áp của bạn chữa lành mọi nỗi buồn! 💙",
-                    "Giọng hát của bạn như thuốc tiên! 🎶",
-                    "Bạn biết cách ngọt ngào đến thế! 🧁",
-                    "Trái tim em cảm ơn sự thấu hiểu của bạn! 💚"
-                ]
-            },
-            {
-                question: "Thời điểm nào bạn cảm thấy lãng mạn nhất? 🌙",
-                options: [
-                    "🌅 Bình minh đầu ngày mới",
-                    "🌇 Hoàng hôn tím hồng",
-                    "⭐ Đêm đầy sao trời",
-                    "🌧️ Mưa rơi nhẹ nhàng"
-                ],
-                responses: [
-                    "Bạn mang đến hy vọng mới mỗi ngày! ☀️",
-                    "Khoảnh khắc hoàng hôn cùng bạn thật đẹp! 🧡",
-                    "Dưới bầu trời sao, tình yêu ta tỏa sáng! ⭐",
-                    "Tiếng mưa cùng bạn thật thơ mộng! 💧"
-                ]
-            },
-            {
-                question: "Điều gì quan trọng nhất trong tình yêu? 💖",
-                options: [
-                    "🤝 Sự tin tưởng tuyệt đối",
-                    "😊 Tiếng cười mỗi ngày",
-                    "🌱 Cùng nhau trưởng thành",
-                    "💕 Yêu thương vô điều kiện"
-                ],
-                responses: [
-                    "Bạn là người đáng tin cậy nhất! 🛡️",
-                    "Nụ cười bạn là ánh sáng của em! 😄",
-                    "Cùng bạn, em muốn trở thành phiên bản tốt hơn! 🌟",
-                    "Tình yêu thuần khiết của bạn làm em xúc động! 💗"
-                ]
-            }
-        ];
+      const GOOGLE_SCRIPT_URL =
+        "https://script.google.com/macros/s/AKfycbxhZluU9t4p8MqsAeUc3q20CtQ0XaUq4R5Pxvg7h0Xi3ZUbhVeyjL8Tp2plh_7ti5NzqQ/exec";
 
-        // Personality types based on answers
-        const personalityTypes = [
-            {
-                name: "💖 Hoàng Tử/Công Chúa Tình Yêu",
-                description: "Bạn là hiện thân của sự lãng mạn! Trái tim bạn thuần khiết và đầy yêu thương. Bạn tin vào tình yêu đích thực và luôn mang đến niềm vui cho người khác.",
-                emoji: "👑💕"
-            },
-            {
-                name: "🌟 Ngôi Sao Tình Yêu",
-                description: "Bạn tỏa sáng như một ngôi sao! Tính cách vui vẻ và năng lượng tích cực của bạn thu hút mọi người. Tình yêu của bạn như ánh sáng ấm áp.",
-                emoji: "⭐💫"
-            },
-            {
-                name: "🎭 Nghệ Sĩ Tình Yêu",
-                description: "Bạn có tâm hồn nghệ sĩ đầy cảm xúc! Bạn cảm nhận tình yêu một cách sâu sắc và biết cách thể hiện tình cảm một cách tinh tế.",
-                emoji: "🎨💝"
-            },
-            {
-                name: "🔥 Chiến Binh Tình Yêu",
-                description: "Bạn yêu với tất cả trái tim! Tình yêu của bạn mãnh liệt, chân thành và không ngại khó khăn. Bạn sẵn sàng chiến đấu vì tình yêu đích thực.",
-                emoji: "⚔️❤️"
-            }
-        ];
+      const questions = [
+  {
+    question: "Bạn thích dành thời gian trong khung giờ nào nhất? 🌸",
+    options: [
+      "☀️ Sáng sớm - thích sự yên tĩnh và năng lượng mới mẻ",
+      "☕ Sáng muộn - thư giãn với ly cà phê và không gian ấm cúng",
+      "🌙 Tối muộn - tận hưởng sự tĩnh lặng và những suy nghĩ sâu sắc",
+      "😋 Bất cứ lúc nào - miễn là vui vẻ và có người trò chuyện",
+    ],
+    responses: [
+      "Wow, bạn là người yêu thích sự khởi đầu tươi mới! ☀️",
+      "Cà phê và không gian ấm cúng, bạn biết tận hưởng cuộc sống đó! ☕",
+      "Tâm hồn sâu sắc, bạn thích những khoảnh khắc tĩnh lặng! 🌙",
+      "Năng lượng tích cực, bạn làm mọi thứ trở nên vui vẻ! 😋",
+    ],
+  },
+  {
+    question: "Điều gì khiến bạn cảm thấy hạnh phúc nhất? 💖",
+    options: [
+      "🎁 Nhận được những món quà nhỏ bất ngờ từ người quan tâm",
+      "📝 Được ai đó lắng nghe và thấu hiểu những tâm tư của mình",
+      "🌟 Cảm thấy được yêu thương qua những hành động quan tâm nhỏ",
+      "😆 Cười đau bụng với những câu chuyện hài hước",
+    ],
+    responses: [
+      "Món quà nhỏ nhưng tình cảm to lớn, bạn thật đáng yêu! 🎀",
+      "Được thấu hiểu là điều quý giá nhất đúng không? 💌",
+      "Những hành động nhỏ chứa đựng tình yêu lớn! 🌷",
+      "Tiếng cười là liều thuốc tốt nhất! 😄",
+    ],
+  },
+  {
+    question: "Khi gặp khó khăn, bạn thường làm gì? 🤔",
+    options: [
+      "🧭 Tự mình tìm cách giải quyết và học hỏi từ trải nghiệm",
+      "📲 Tìm người tin tưởng để chia sẻ và xin lời khuyên",
+      "😜 Cố gắng giữ tinh thần tích cực và tìm điều vui trong hoàn cảnh khó khăn",
+      "🚣‍♂️ Im lặng suy nghĩ cho đến khi tìm ra hướng giải quyết",
+    ],
+    responses: [
+      "Bạn là người độc lập và mạnh mẽ! 💓",
+      "Biết tìm kiếm sự hỗ trợ là điều thông minh! 📩",
+      "Lạc quan trong khó khăn, bạn thật tuyệt vời! 😊",
+      "Suy nghĩ kỹ lưỡng trước khi hành động, rất khôn ngoan! ☁️",
+    ],
+  },
+  {
+    question: "Món quà nào bạn thích nhận nhất? 🎁",
+    options: [
+      "🌹 Hoa tươi kèm lời nhắn ngọt ngào",
+      "🍪 Đồ ăn ngon được làm tận tay",
+      "📖 Sách hoặc nhật ký với những dòng ghi chú cá nhân",
+      "🧸 Đồ vật dễ thương để làm kỷ niệm",
+    ],
+    responses: [
+      "Hoa và lời ngọt ngào, bạn thích sự lãng mạn! 🌷",
+      "Đồ ăn làm bằng tình yêu thương, thật ý nghĩa! 🍰",
+      "Những dòng chữ chứa đựng tâm tư, rất cảm động! 📖",
+      "Kỷ vật đáng yêu để lưu giữ kỷ niệm! 🧸",
+    ],
+  },
+  {
+    question: "Buổi hẹn lý tưởng của bạn là gì? 💕",
+    options: [
+      "🌅 Ngắm bình minh/hoàng hôn ở nơi yên tĩnh",
+      "☕ Uống cà phê và trò chuyện sâu sắc",
+      "🎧 Nghe nhạc và chia sẻ sở thích cùng nhau",
+      "🌊 Đi dạo và nói chuyện về mọi thứ trên đời",
+    ],
+    responses: [
+      "Thiên nhiên và khoảnh khắc yên bình, thật lãng mạn! ☀️",
+      "Cà phê và cuộc trò chuyện sâu sắc, tuyệt vời! ☕",
+      "Âm nhạc kết nối tâm hồn, rất đẹp! 🎶",
+      "Những cuộc trò chuyện tự nhiên và chân thật! 🌊",
+    ],
+  },
+];
 
-        // ===== GAME VARIABLES =====
-        let currentQuestion = 0;
-        let gameStarted = false;
-        let sessionId = '';
-        let playerData = {
-            name: '',
-            email: '',
-            age: '',
-            answers: [],
-            startTime: null,
-            endTime: null,
-            finalResult: null
-        };
 
-        // ===== GOOGLE SHEETS FUNCTIONS =====
-        async function saveSessionToGoogleSheets(sessionData) {
-            try {
-                const response = await fetch(GOOGLE_SCRIPT_URL, {
-                    method: 'POST',
-                    mode: 'no-cors',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(sessionData)
-                });
-                
-                return true; // no-cors mode doesn't allow reading response
-            } catch (error) {
-                console.error('Error saving to Google Sheets:', error);
-                return false;
-            }
+      const personalityTypes = [
+  {
+    name: "🌅 Cô Gái Lãng Mạn",
+    description:
+      "Bạn là người yêu thích sự lãng mạn và những khoảnh khắc đẹp trong cuộc sống. Bạn có tâm hồn nhạy cảm, biết trân trọng vẻ đẹp nhỏ bé và luôn tìm kiếm những trải nghiệm ý nghĩa.",
+    emoji: "💖✨",
+  },
+  {
+    name: "😎 Cô Gái Năng Động",
+    description:
+      "Bạn mang trong mình năng lượng tích cực và khả năng làm vui lòng mọi người xung quanh. Bạn lạc quan, hài hước và luôn biết cách tìm ra điều tích cực trong mọi hoàn cảnh.",
+    emoji: "🎉😎",
+  },
+  {
+    name: "🤗 Cô Gái Ấm Áp",
+    description:
+      "Bạn là người rất quan tâm đến cảm xúc và mối quan hệ với mọi người. Bạn có trái tim nhân hậu, luôn lắng nghe và mang đến sự ấm áp cho những người xung quanh.",
+    emoji: "🌟🥰",
+  },
+  {
+    name: "💌 Cô Gái Duyên Dáng",
+    description:
+      "Bạn có phong cách giao tiếp duyên dáng và cuốn hút. Bạn biết cách tạo ra những khoảnh khắc đặc biệt và để lại ấn tượng sâu sắc trong lòng mọi người.",
+    emoji: "💕🌸",
+  },
+];
+
+
+      let currentQuestion = 0;
+      let gameStarted = false;
+      let sessionId = "";
+      let playerData = {
+        name: "",
+        email: "",
+        age: "",
+        answers: [],
+        startTime: null,
+        endTime: null,
+        finalResult: null,
+      };
+
+      async function saveSessionToGoogleSheets(sessionData) {
+        try {
+          const response = await fetch(GOOGLE_SCRIPT_URL, {
+            method: "POST",
+            mode: "no-cors",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(sessionData),
+          });
+
+          return true;
+        } catch (error) {
+          console.error("Error saving to Google Sheets:", error);
+          return false;
+        }
+      }
+
+      function showStatusMessage(message, type = "success") {
+        const statusDiv = document.getElementById("statusMessage");
+        statusDiv.innerHTML = `<div class="status-message status-${type}">${message}</div>`;
+
+        setTimeout(() => {
+          statusDiv.innerHTML = "";
+        }, 3000);
+      }
+
+      function generateSessionId() {
+        return Date.now().toString(36) + Math.random().toString(36).substr(2);
+      }
+
+      function validateUserInfo() {
+        const name = document.getElementById("playerName").value.trim();
+        const email = document.getElementById("playerEmail").value.trim();
+        const age = document.getElementById("playerAge").value.trim();
+
+        if (!name) {
+          showStatusMessage("Hãy nhập tên của bạn nha! 😊", "error");
+          return false;
         }
 
-        function showStatusMessage(message, type = 'success') {
-            const statusDiv = document.getElementById('statusMessage');
-            statusDiv.innerHTML = `<div class="status-message status-${type}">${message}</div>`;
-            
-            setTimeout(() => {
-                statusDiv.innerHTML = '';
-            }, 3000);
+        if (!email) {
+          showStatusMessage("Email không thể bỏ trống! 📬", "error");
+          return false;
         }
 
-        // ===== GAME FUNCTIONS =====
-        function generateSessionId() {
-            return Date.now().toString(36) + Math.random().toString(36).substr(2);
+        if (!email.includes("@")) {
+          showStatusMessage("Email không hợp lệ, vui lòng kiểm tra lại! 😜", "error");
+          return false;
         }
 
-        function validateUserInfo() {
-            const name = document.getElementById('playerName').value.trim();
-            const email = document.getElementById('playerEmail').value.trim();
-            const age = document.getElementById('playerAge').value.trim();
-
-            if (!name) {
-                showStatusMessage('Vui lòng nhập tên của bạn! 💕', 'error');
-                return false;
-            }
-
-            if (!email) {
-                showStatusMessage('Vui lòng nhập email của bạn! 📧', 'error');
-                return false;
-            }
-
-            if (!email.includes('@')) {
-                showStatusMessage('Email không hợp lệ! 📧', 'error');
-                return false;
-            }
-
-            if (age && (age < 13 || age > 100)) {
-                showStatusMessage('Tuổi phải từ 13 đến 100! 🎂', 'error');
-                return false;
-            }
-
-            playerData.name = name;
-            playerData.email = email;
-            playerData.age = age;
-            playerData.startTime = new Date().toISOString();
-            sessionId = generateSessionId();
-
-            return true;
+        if (age && (age < 13 || age > 100)) {
+          showStatusMessage("Tuổi phải từ 13 đến 100! 🌟", "error");
+          return false;
         }
 
-        async function startGame() {
-            if (!validateUserInfo()) {
-                return;
-            }
+        playerData.name = name;
+        playerData.email = email;
+        playerData.age = age;
+        playerData.startTime = new Date().toISOString();
+        sessionId = generateSessionId();
 
-            // Disable start button
-            document.getElementById('startBtn').disabled = true;
-            
-            gameStarted = true;
-            currentQuestion = 0;
-            playerData.answers = [];
-            
-            document.getElementById('welcomeScreen').classList.add('hidden');
-            document.getElementById('gameScreen').style.display = 'block';
+        return true;
+      }
+
+      async function startGame() {
+        if (!validateUserInfo()) {
+          return;
+        }
+
+        document.getElementById("startBtn").disabled = true;
+
+        gameStarted = true;
+        currentQuestion = 0;
+        playerData.answers = [];
+
+        document.getElementById("welcomeScreen").classList.add("hidden");
+        document.getElementById("gameScreen").style.display = "block";
+        showQuestion();
+        updateProgress();
+
+        showStatusMessage(`Bắt đầu khám phá bản thân nào! 🌸`, "success");
+      }
+
+      function showQuestion() {
+        const question = questions[currentQuestion];
+        document.getElementById("questionNumber").textContent = `Câu ${
+          currentQuestion + 1
+        }/${questions.length}`;
+        document.getElementById("questionText").textContent = question.question;
+
+        const optionsContainer = document.getElementById("optionsContainer");
+        optionsContainer.innerHTML = "";
+
+        question.options.forEach((option, index) => {
+          const button = document.createElement("button");
+          button.className = "option-btn";
+          button.textContent = option;
+          button.onclick = () => selectAnswer(index);
+          optionsContainer.appendChild(button);
+        });
+
+        document.getElementById("responseMessage").style.display = "none";
+      }
+
+      async function selectAnswer(answerIndex) {
+        const question = questions[currentQuestion];
+        const response = question.responses[answerIndex];
+
+        playerData.answers.push({
+          questionIndex: currentQuestion + 1,
+          question: question.question,
+          selectedOption: question.options[answerIndex],
+          optionIndex: answerIndex,
+          response: response,
+        });
+
+        const responseElement = document.getElementById("responseMessage");
+        responseElement.textContent = response;
+        responseElement.style.display = "block";
+
+        createHeartBurst();
+
+        const optionButtons = document.querySelectorAll(".option-btn");
+        optionButtons.forEach((btn) => {
+          btn.disabled = true;
+          btn.style.opacity = "0.6";
+        });
+
+        setTimeout(() => {
+          if (currentQuestion < questions.length - 1) {
+            currentQuestion++;
             showQuestion();
             updateProgress();
-            
-            showStatusMessage(`Chào ${playerData.name}! Chúc bạn chơi vui vẻ! 🎮`, 'success');
-        }
-
-        function showQuestion() {
-            const question = questions[currentQuestion];
-            document.getElementById('questionNumber').textContent = `Câu ${currentQuestion + 1}/${questions.length}`;
-            document.getElementById('questionText').textContent = question.question;
-            
-            const optionsContainer = document.getElementById('optionsContainer');
-            optionsContainer.innerHTML = '';
-            
-            question.options.forEach((option, index) => {
-                const button = document.createElement('button');
-                button.className = 'option-btn';
-                button.textContent = option;
-                button.onclick = () => selectAnswer(index);
-                optionsContainer.appendChild(button);
-            });
-
-            document.getElementById('responseMessage').style.display = 'none';
-        }
-
-        async function selectAnswer(answerIndex) {
-            const question = questions[currentQuestion];
-            const response = question.responses[answerIndex];
-            
-            // Save answer to playerData
-            playerData.answers.push({
-                questionIndex: currentQuestion + 1,
-                question: question.question,
-                selectedOption: question.options[answerIndex],
-                optionIndex: answerIndex,
-                response: response
-            });
-
-            // Show response message
-            const responseElement = document.getElementById('responseMessage');
-            responseElement.textContent = response;
-            responseElement.style.display = 'block';
-            
-            // Create heart burst effect
-            createHeartBurst();
-            
-            // Disable option buttons
-            const optionButtons = document.querySelectorAll('.option-btn');
-            optionButtons.forEach(btn => {
-                btn.disabled = true;
-                btn.style.opacity = '0.6';
-            });
-            
-            // Move to next question or finish game
-            setTimeout(() => {
-                if (currentQuestion < questions.length - 1) {
-                    currentQuestion++;
-                    showQuestion();
-                    updateProgress();
-                } else {
-                    finishGame();
-                }
-            }, 2500);
-        }
-
-        function updateProgress() {
-            const progress = ((currentQuestion + 1) / questions.length) * 100;
-            document.getElementById('progressBar').style.width = progress + '%';
-        }
-
-        function calculateFinalResult() {
-            // Simple algorithm to determine personality type based on answers
-            const answerCounts = [0, 0, 0, 0];
-            
-            playerData.answers.forEach(answer => {
-                answerCounts[answer.optionIndex]++;
-            });
-            
-            // Find the most selected option type
-            const maxCount = Math.max(...answerCounts);
-            const dominantType = answerCounts.indexOf(maxCount);
-            
-            return personalityTypes[dominantType];
-        }
-
-        async function finishGame() {
-            playerData.endTime = new Date().toISOString();
-            playerData.finalResult = calculateFinalResult();
-            
-            document.getElementById('gameScreen').style.display = 'none';
-            document.getElementById('finalScreen').style.display = 'block';
-            document.getElementById('finalLoadingIndicator').style.display = 'block';
-            
-            // Prepare session data for Google Sheets
-            const sessionData = {
-                sessionId: sessionId,
-                timestamp: new Date().toISOString(),
-                name: playerData.name,
-                email: playerData.email,
-                age: playerData.age,
-                startTime: playerData.startTime,
-                endTime: playerData.endTime,
-                totalQuestions: questions.length,
-                
-                // Individual answers (Q1, Q2, Q3, Q4, Q5)
-                answer1: playerData.answers[0]?.selectedOption || '',
-                answer2: playerData.answers[1]?.selectedOption || '',
-                answer3: playerData.answers[2]?.selectedOption || '',
-                answer4: playerData.answers[3]?.selectedOption || '',
-                answer5: playerData.answers[4]?.selectedOption || '',
-                
-                // Answer indices (for analysis)
-                answerIndex1: playerData.answers[0]?.optionIndex + 1 || '',
-                answerIndex2: playerData.answers[1]?.optionIndex + 1 || '',
-                answerIndex3: playerData.answers[2]?.optionIndex + 1 || '',
-                answerIndex4: playerData.answers[3]?.optionIndex + 1 || '',
-                answerIndex5: playerData.answers[4]?.optionIndex + 1 || '',
-                
-                // Final result
-                personalityType: playerData.finalResult.name,
-                personalityDescription: playerData.finalResult.description,
-                personalityEmoji: playerData.finalResult.emoji,
-                
-                // Summary
-                allAnswers: playerData.answers.map(a => a.selectedOption).join(' | '),
-                gameCompleted: true
-            };
-
-            // Save to Google Sheets
-            const saveSuccess = await saveSessionToGoogleSheets(sessionData);
-            
-            // Hide loading and show final content
-            document.getElementById('finalLoadingIndicator').style.display = 'none';
-            document.getElementById('finalContent').style.display = 'block';
-            
-            // Update final result display
-            document.getElementById('finalResultText').innerHTML = 
-                `Bạn đã tìm được đường vào tim em rồi! 💕<br>
-                Trái tim em đã mở ra và chào đón bạn với tất cả tình yêu thương! ✨<br>
-                <br><strong>Kết quả của bạn: ${playerData.finalResult.name}</strong>`;
-            
-            // Show result summary
-            const summaryHtml = `
-                <h3>📊 Tóm tắt kết quả của ${playerData.name}:</h3>
-                <p><strong>Loại tính cách:</strong> ${playerData.finalResult.name}</p>
-                <p><strong>Mô tả:</strong> ${playerData.finalResult.description}</p>
-                <hr style="margin: 15px 0; border: 1px solid rgba(255,182,193,0.3);">
-                <p><strong>Câu trả lời của bạn:</strong></p>
-                ${playerData.answers.map((answer, index) => 
-                    `<p><strong>Câu ${index + 1}:</strong> ${answer.selectedOption}</p>`
-                ).join('')}
-                <hr style="margin: 15px 0; border: 1px solid rgba(255,182,193,0.3);">
-                <p><strong>Trạng thái lưu:</strong> ${saveSuccess ? '✅ Đã lưu thành công!' : '❌ Lỗi khi lưu'}</p>
-            `;
-            
-            document.getElementById('resultSummary').innerHTML = summaryHtml;
-            
-            // Create massive celebration
-            createCelebration();
-            
-            if (!saveSuccess) {
-                showStatusMessage('Có lỗi khi lưu kết quả, nhưng bạn vẫn có thể xem kết quả! 😅', 'error');
-            }
-        }
-
-        function restartGame() {
-            currentQuestion = 0;
-            playerData.answers = [];
-            sessionId = '';
-            document.getElementById('finalScreen').style.display = 'none';
-            document.getElementById('welcomeScreen').classList.remove('hidden');
-            document.getElementById('progressBar').style.width = '0%';
-            document.getElementById('startBtn').disabled = false;
-            
-            // Clear form
-            document.getElementById('playerName').value = '';
-            document.getElementById('playerEmail').value = '';
-            document.getElementById('playerAge').value = '';
-        }
-
-        function shareResult() {
-            const message = `Tôi là ${playerData.name} và vừa hoàn thành trò chơi 'Tìm Đường Vào Tim Em'! 💖 
-Kết quả của tôi: ${playerData.finalResult.name}
-${playerData.finalResult.description}
-Bạn cũng thử chơi nhé!`;
-            
-            if (navigator.share) {
-                navigator.share({
-                    title: 'Tìm Đường Vào Tim Em',
-                    text: message,
-                    url: window.location.href
-                });
-            } else {
-                navigator.clipboard.writeText(message + '\n' + window.location.href).then(() => {
-                    showStatusMessage('Đã copy kết quả! Bạn có thể paste và gửi cho bạn bè 💕', 'success');
-                });
-            }
-        }
-
-        // ===== ANIMATION FUNCTIONS =====
-        function createFallingHeart() {
-            const heart = document.createElement('div');
-            heart.className = 'falling-heart';
-            heart.innerHTML = ['💖', '💕', '💗', '💝', '💘'][Math.floor(Math.random() * 5)];
-            heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
-            heart.style.fontSize = (Math.random() * 10 + 15) + 'px';
-            
-            document.getElementById('heartContainer').appendChild(heart);
-            
-            setTimeout(() => {
-                heart.remove();
-            }, 5000);
-        }
-
-        function createHeartBurst() {
-            for (let i = 0; i < 8; i++) {
-                setTimeout(() => {
-                    const heart = document.createElement('div');
-                    heart.innerHTML = '💖';
-                    heart.style.position = 'fixed';
-                    heart.style.left = Math.random() * 100 + 'vw';
-                    heart.style.top = Math.random() * 100 + 'vh';
-                    heart.style.fontSize = '25px';
-                    heart.style.pointerEvents = 'none';
-                    heart.style.zIndex = '9999';
-                    heart.style.animation = 'celebrate 2s ease-out forwards';
-                    document.body.appendChild(heart);
-                    
-                    setTimeout(() => heart.remove(), 2000);
-                }, i * 100);
-            }
-        }
-
-        function createCelebration() {
-            const celebrationContainer = document.createElement('div');
-            celebrationContainer.className = 'celebration-hearts';
-            document.body.appendChild(celebrationContainer);
-            
-            for (let i = 0; i < 20; i++) {
-                setTimeout(() => {
-                    const heart = document.createElement('div');
-                    heart.className = 'celebration-heart';
-                    heart.innerHTML = ['💖', '💕', '💗', '💝', '💘', '❤️'][Math.floor(Math.random() * 6)];
-                    heart.style.left = Math.random() * 100 + 'vw';
-                    heart.style.top = Math.random() * 100 + 'vh';
-                    celebrationContainer.appendChild(heart);
-                }, i * 150);
-            }
-            
-            setTimeout(() => {
-                celebrationContainer.remove();
-            }, 4000);
-        }
-
-        function createSparkle() {
-            const sparkle = document.createElement('div');
-            sparkle.innerHTML = '✨';
-            sparkle.style.position = 'fixed';
-            sparkle.style.left = Math.random() * 100 + 'vw';
-            sparkle.style.top = Math.random() * 100 + 'vh';
-            sparkle.style.fontSize = '20px';
-            sparkle.style.pointerEvents = 'none';
-            sparkle.style.zIndex = '5';
-            sparkle.style.animation = 'sparkleFloat 4s ease-out forwards';
-            document.body.appendChild(sparkle);
-            
-            setTimeout(() => sparkle.remove(), 4000);
-        }
-
-        // ===== INITIALIZATION =====
-        // Start falling hearts
-        setInterval(createFallingHeart, 800);
-
-        // Add sparkle animation
-        const sparkleStyle = document.createElement('style');
-        sparkleStyle.textContent = `
-            @keyframes sparkleFloat {
-                0% { opacity: 1; transform: translateY(0) rotate(0deg); }
-                100% { opacity: 0; transform: translateY(-150px) rotate(360deg); }
-            }
-        `;
-        document.head.appendChild(sparkleStyle);
-
-        // Create sparkles periodically
-        setInterval(createSparkle, 3000);
-
-        // ===== GOOGLE APPS SCRIPT SETUP INSTRUCTIONS =====
-        console.log(`
-        🔧 HƯỚNG DẪN THIẾT LẬP GOOGLE SHEETS (FORMAT MỚI):
-        
-        1. Tạo Google Sheet mới với các cột header:
-           A: SessionID
-           B: Timestamp  
-           C: Name
-           D: Email
-           E: Age
-           F: StartTime
-           G: EndTime
-           H: TotalQuestions
-           I: Answer1
-           J: Answer2
-           K: Answer3
-           L: Answer4
-           M: Answer5
-           N: AnswerIndex1
-           O: AnswerIndex2
-           P: AnswerIndex3
-           Q: AnswerIndex4
-           R: AnswerIndex5
-           S: PersonalityType
-           T: PersonalityDescription
-           U: PersonalityEmoji
-           V: AllAnswers
-           W: GameCompleted
-        
-        2. Tạo Google Apps Script với code sau:
-        
-        function doPost(e) {
-          try {
-            const sheet = SpreadsheetApp.openById('YOUR_SHEET_ID').getActiveSheet();
-            const data = JSON.parse(e.postData.contents);
-            
-            sheet.appendRow([
-              data.sessionId || '',
-              data.timestamp || new Date(),
-              data.name || '',
-              data.email || '',
-              data.age || '',
-              data.startTime || '',
-              data.endTime || '',
-              data.totalQuestions || '',
-              data.answer1 || '',
-              data.answer2 || '',
-              data.answer3 || '',
-              data.answer4 || '',
-              data.answer5 || '',
-              data.answerIndex1 || '',
-              data.answerIndex2 || '',
-              data.answerIndex3 || '',
-              data.answerIndex4 || '',
-              data.answerIndex5 || '',
-              data.personalityType || '',
-              data.personalityDescription || '',
-              data.personalityEmoji || '',
-              data.allAnswers || '',
-              data.gameCompleted || false
-            ]);
-            
-            return ContentService.createTextOutput('Success');
-          } catch (error) {
-            return ContentService.createTextOutput('Error: ' + error.toString());
+          } else {
+            finishGame();
           }
+        }, 2500);
+      }
+
+      function updateProgress() {
+        const progress = ((currentQuestion + 1) / questions.length) * 100;
+        document.getElementById("progressBar").style.width = progress + "%";
+      }
+
+      function calculateFinalResult() {
+        const answerCounts = [0, 0, 0, 0];
+
+        playerData.answers.forEach((answer) => {
+          answerCounts[answer.optionIndex]++;
+        });
+
+        const maxCount = Math.max(...answerCounts);
+        const dominantType = answerCounts.indexOf(maxCount);
+
+        return personalityTypes[dominantType];
+      }
+
+      async function finishGame() {
+        playerData.endTime = new Date().toISOString();
+        playerData.finalResult = calculateFinalResult();
+
+        document.getElementById("gameScreen").style.display = "none";
+        document.getElementById("finalScreen").style.display = "block";
+        document.getElementById("finalLoadingIndicator").style.display = "block";
+
+        const sessionData = {
+          sessionId: sessionId,
+          timestamp: new Date().toISOString(),
+          name: playerData.name,
+          email: playerData.email,
+          age: playerData.age,
+          startTime: playerData.startTime,
+          endTime: playerData.endTime,
+          totalQuestions: questions.length,
+          answer1: playerData.answers[0]?.selectedOption || "",
+          answer2: playerData.answers[1]?.selectedOption || "",
+          answer3: playerData.answers[2]?.selectedOption || "",
+          answer4: playerData.answers[3]?.selectedOption || "",
+          answer5: playerData.answers[4]?.selectedOption || "",
+          answerIndex1: playerData.answers[0]?.optionIndex + 1 || "",
+          answerIndex2: playerData.answers[1]?.optionIndex + 1 || "",
+          answerIndex3: playerData.answers[2]?.optionIndex + 1 || "",
+          answerIndex4: playerData.answers[3]?.optionIndex + 1 || "",
+          answerIndex5: playerData.answers[4]?.optionIndex + 1 || "",
+          personalityType: playerData.finalResult.name,
+          personalityDescription: playerData.finalResult.description,
+          personalityEmoji: playerData.finalResult.emoji,
+          allAnswers: playerData.answers.map((a) => a.selectedOption).join(" | "),
+          gameCompleted: true,
+        };
+
+        const saveSuccess = await saveSessionToGoogleSheets(sessionData);
+
+        document.getElementById("finalLoadingIndicator").style.display = "none";
+        document.getElementById("finalContent").style.display = "block";
+
+        document.getElementById("finalResultText").innerHTML = 
+          `Chúc mừng ${playerData.name}! Bạn đã hoàn thành bài test ! 💕<br>
+          Hãy xem kết quả thú vị về tính cách của bạn nha! 🌸<br>
+          <br><strong>Kết quả: ${playerData.finalResult.name}</strong>`;
+
+        const summaryHtml = `
+          <h3>🌟 Kết quả khám phá bản thân của ${playerData.name}:</h3>
+          <p><strong>Loại tính cách:</strong> ${playerData.finalResult.name}</p>
+          <p><strong>Mô tả:</strong> ${playerData.finalResult.description}</p>
+          <hr style="margin: 15px 0; border: 1px solid rgba(255,182,193,0.3);">
+          <p><strong>Các lựa chọn của bạn:</strong></p>
+          ${playerData.answers.map((answer, index) => 
+            `<p><strong>Câu ${index + 1}:</strong> ${answer.selectedOption}</p>`
+          ).join("")}
+          <hr style="margin: 15px 0; border: 1px solid rgba(255,182,193,0.3);">
+          <h3>💕 Lời nhận xét:</h3>
+          <p>Bạn là một người thật đặc biệt với những đặc điểm tính cách rất đáng yêu! Mỗi lựa chọn của bạn đều thể hiện một khía cạnh thú vị của bản thân. Hãy tiếp tục phát huy những điểm mạnh và luôn tự tin vào con người mình nhé! ✨</p>
+          <p><strong>Cảm ơn ${playerData.name} đã tham gia!</strong> Hy vọng bạn đã có những phút giây thú vị khi khám phá bản thân mình! 🌸</p>
+        `;
+
+        document.getElementById("resultSummary").innerHTML = summaryHtml;
+
+        createCelebration();
+
+        if (!saveSuccess) {
+          showStatusMessage("Có lỗi nhỏ khi lưu dữ liệu, nhưng kết quả vẫn hiển thị bình thường! 😅", "error");
         }
-        
-        3. Deploy as web app với quyền "Anyone"
-        4. Copy URL và thay thế vào biến GOOGLE_SCRIPT_URL
-        `);
+      }
+
+      function restartGame() {
+        currentQuestion = 0;
+        playerData.answers = [];
+        sessionId = "";
+        document.getElementById("finalScreen").style.display = "none";
+        document.getElementById("welcomeScreen").classList.remove("hidden");
+        document.getElementById("progressBar").style.width = "0%";
+        document.getElementById("startBtn").disabled = false;
+
+        document.getElementById("playerName").value = "Thư";
+        document.getElementById("playerEmail").value = "";
+        document.getElementById("playerAge").value = "19";
+      }
+
+      function createFallingHeart() {
+        const heart = document.createElement("div");
+        heart.className = "falling-heart";
+        heart.innerHTML = ["💖", "💕", "💗", "💝", "💘"][Math.floor(Math.random() * 5)];
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+        heart.style.fontSize = Math.random() * 10 + 15 + "px";
+
+        document.getElementById("heartContainer").appendChild(heart);
+
+        setTimeout(() => {
+          heart.remove();
+        }, 5000);
+      }
+
+      function createHeartBurst() {
+        for (let i = 0; i < 8; i++) {
+          setTimeout(() => {
+            const heart = document.createElement("div");
+            heart.innerHTML = "💖";
+            heart.style.position = "fixed";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.top = Math.random() * 100 + "vh";
+            heart.style.fontSize = "25px";
+            heart.style.pointerEvents = "none";
+            heart.style.zIndex = "9999";
+            heart.style.animation = "celebrate 2s ease-out forwards";
+            document.body.appendChild(heart);
+
+            setTimeout(() => heart.remove(), 2000);
+          }, i * 100);
+        }
+      }
+
+      function createCelebration() {
+        const celebrationContainer = document.createElement("div");
+        celebrationContainer.className = "celebration-hearts";
+        document.body.appendChild(celebrationContainer);
+
+        for (let i = 0; i < 20; i++) {
+          setTimeout(() => {
+            const heart = document.createElement("div");
+            heart.className = "celebration-heart";
+            heart.innerHTML = ["💖", "💕", "💗", "💝", "💘", "❤️"][Math.floor(Math.random() * 6)];
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.top = Math.random() * 100 + "vh";
+            celebrationContainer.appendChild(heart);
+          }, i * 150);
+        }
+
+        setTimeout(() => {
+          celebrationContainer.remove();
+        }, 4000);
+      }
+
+      function createSparkle() {
+        const sparkle = document.createElement("div");
+        sparkle.innerHTML = "✨";
+        sparkle.style.position = "fixed";
+        sparkle.style.left = Math.random() * 100 + "vw";
+        sparkle.style.top = Math.random() * 100 + "vh";
+        sparkle.style.fontSize = "20px";
+        sparkle.style.pointerEvents = "none";
+        sparkle.style.zIndex = "5";
+        sparkle.style.animation = "sparkleFloat 4s ease-out forwards";
+        document.body.appendChild(sparkle);
+
+        setTimeout(() => sparkle.remove(), 4000);
+      }
+
+      setInterval(createFallingHeart, 800);
+
+      const sparkleStyle = document.createElement("style");
+      sparkleStyle.textContent = `
+        @keyframes sparkleFloat {
+          0% { opacity: 1; transform: translateY(0) rotate(0deg); }
+          100% { opacity: 0; transform: translateY(-150px) rotate(360deg); }
+        }
+      `;
+      document.head.appendChild(sparkleStyle);
+
+      setInterval(createSparkle, 3000);
     </script>
-</body>
+  </body>
 </html>
